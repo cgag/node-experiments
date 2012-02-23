@@ -6,11 +6,11 @@ function start(route, handlers) {
     var pathname = url.parse(request.url).pathname;
     console.log("request for " + pathname + " recieved.");
 
-    route(handlers, pathname);
+    route(handlers, pathname, response);
     
-    response.writeHead(200, {"content-type": "text/plain"});
-    response.write("hello world");
-    response.end();
+    //response.writeHead(200, {"content-type": "text/plain"});
+    //response.write(content);
+    //response.end();
   }
   
   http.createServer(onRequest).listen(8000);
